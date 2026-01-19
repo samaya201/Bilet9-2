@@ -1,0 +1,25 @@
+﻿@using Bilet9.Models
+@model ChefCreateVM
+<form method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input asp-action="Name" class="form-control" placeholder="Enter Name">
+       <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Image">Image</label>
+        <input asp-action="Image" class="form-control" placeholder="Enter Image">
+        <span asp-validation-for="Image"></span>
+    </div>
+    <div class="form-check">
+        <select  asp-for="PositionId" class="form-control">
+            @foreach(Position position in ViewBag.Positions)
+            {
+                <option value="@position.Id">@position.Title</option>
+            }
+        </select>
+        <span asp-validation-for="PositionId"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

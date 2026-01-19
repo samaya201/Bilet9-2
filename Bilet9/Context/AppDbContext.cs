@@ -13,8 +13,7 @@ public class AppDbContext : DbContext
     {
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         base.OnModelCreating(modelBuilder);
-    }
-
+    }    
     public DbSet<Chef> Chefs { get; set; }
     public DbSet<Position> Positions { get; set; }
    
